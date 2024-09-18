@@ -9,5 +9,5 @@ func main() {
 	manager.Pay("ALIPAY", 100)
 	manager.Pay("WECHAT", 200)
 	manager.Pay("CREDIT_CARD", 300)
-	manager.Pay("UNKNOWN", 400) // 示例错误处理
+	manager.Pay("UNKNOWN", 400)
 }
