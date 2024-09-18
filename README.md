@@ -1,3 +1,3 @@
-# learning-go
+# GoSkills
 
-Learning Golang by examples and library
+Golang 入门最佳实践案例
