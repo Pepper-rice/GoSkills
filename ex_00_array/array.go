@@ -51,6 +51,4 @@ func main() {
 	fmt.Println("数组：", arr)
 	fmt.Println("切片：", slice)
 
-	// 数组和切片
-
 }
