@@ -17,10 +17,10 @@ func main() {
 	i := 1
 	fmt.Println("init:", i)
 
-	zeroval(i)
+	zeroval(i) // 值传递，不会改变 i 的值
 	fmt.Println(i)
 
-	zeroptr(&i)
+	zeroptr(&i) // 指针传递，会改变 i 的值
 	fmt.Println(i)
 
 	// 打印变量 i 的指针地址
