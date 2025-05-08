@@ -49,15 +49,19 @@ func main() {
 	res2Json, _ := json.Marshal(res2)
 	fmt.Println("7", string(res2Json))
 
-	// 反序列化
+	// 反序列化 - 将JSON字符串转换为Go数据结构
 	jsonStr := `{"num":6.13,"strs":["a","b"],"mapkey":{"submap":"value"}}`
 
+	// map类型变量用于存储解析后的JSON数据
 	var data map[string]interface{}
 
+	// 使用json.Unmarshal将JSON字符串解析为Go数据结构，第一个参数是JSON字符串的字节切片，第二个参数是目标变量的指针
 	if err := json.Unmarshal([]byte(jsonStr), &data); err != nil {
 		panic(err)
 	}
 	fmt.Println("8", data)
+
+	// 类型断言 - 从map中获取特定类型的值
 	num := data["num"].(float64)
 	str := data["strs"].([]interface{})
 	mapkey := data["mapkey"].(map[string]interface{})
@@ -67,10 +71,10 @@ func main() {
 	fmt.Println("11", str[0].(string))
 	fmt.Println("12", mapkey["submap"].(string))
 
-	// 反序列化到结构体
-	jsonResStr := `{"state":false, "page":1, "fruits":["apple", "peach"]}`
+	// 反序列化到结构体 - 将JSON直接解析为预定义的结构体
+	jsonResStr := `{"state":false, "page":1, "fruits":["apple", "peach"]}` // 定义一个与response2结构体匹配的JSON字符串
 	res := response2{}
-	json.Unmarshal([]byte(jsonResStr), &res)
+	json.Unmarshal([]byte(jsonResStr), &res) // 将JSON解析到结构体中，字段会自动匹配
 	fmt.Println("13", res)
 	fmt.Println("14", res.State)
 	fmt.Println("15", res.Fruits)
