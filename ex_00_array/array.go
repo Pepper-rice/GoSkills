@@ -31,7 +31,9 @@ func main() {
 	fmt.Println("2d: ", twoD)
 
 	// 反射获取类型
-	fmt.Println(reflect.TypeOf(a))
+	fmt.Println("反射获取类型")
+	fmt.Println("反射获取类型", reflect.TypeOf(a))
+	fmt.Println("反射获取类型的类型", reflect.TypeOf(a).Kind())
 
 	// Go切片常见API
 	s := make([]int, 5, 10) // 创建一个切片，长度为5，容量为10
@@ -42,5 +44,11 @@ func main() {
 	fmt.Println("从数组或切片中获取 子切片：", s[4:6])
 	fmt.Println("复制切片：", copy(s, src)) // 如果目标切片比源切片小，copy 会截断源切片。返回复制的元素个数。
 	fmt.Println("任意类型转字符串：", fmt.Sprint(s))
+
+	// 数组和切片
+	arr := [6]int{1, 2, 3, 4, 5, 6}
+	slice := arr[1:3]
+	fmt.Println("数组：", arr)
+	fmt.Println("切片：", slice)
 
 }

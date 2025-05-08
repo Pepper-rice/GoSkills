@@ -14,6 +14,10 @@ func main() {
 	base64Url := base64.StdEncoding.EncodeToString([]byte(url))
 	fmt.Println(base64Url)
 
+	// 解密 url
+	urlDecode, _ := base64.StdEncoding.DecodeString(base64Url)
+	fmt.Println(string(urlDecode))
+
 	// 会将 +、/ 替换为 -、_
 	urlSafe := "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu+"
 	base64UrlSafe := base64.URLEncoding.EncodeToString([]byte(urlSafe))
